@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "aws-email-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "react": "^19.1.1",
