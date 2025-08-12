@@ -1,0 +1,38 @@
+From: "Support Team" <support@servicehub.io>
+To: test.user@example.com
+Subject: Password Reset Request
+Date: Mon, 29 Jul 2025 11:30:00 -0400
+Message-ID: <reset56789@servicehub.io>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary3"
+
+--boundary3
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+We received a request to reset your password.
+
+To reset your password, click the link below:
+https://servicehub.io/reset-password?token=abc123
+
+If you did not request this, please ignore this email.
+
+Thanks,
+ServiceHub Support
+
+--boundary3
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hello,</p>
+    <p>We received a request to reset your password.</p>
+    <p>Click the button below to reset it:</p>
+    <p><a href="https://servicehub.io/reset-password?token=abc123" style="background-color:#007BFF;color:white;padding:10px 15px;text-decoration:none;border-radius:5px;">Reset Password</a></p>
+    <p>If you did not request this, you can safely ignore this email.</p>
+    <p>Thanks,<br>ServiceHub Support</p>
+  </body>
+</html>
+
+--boundary3--

@@ -1,0 +1,37 @@
+From: "FlyAway Airlines" <itinerary@flyaway.com>
+To: test.user@example.com
+Subject: Your Flight Itinerary - Confirmation #FA12345
+Date: Mon, 29 Jul 2025 21:00:00 -0400
+Message-ID: <flightFA12345@flyaway.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary18"
+
+--boundary18
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Test User,
+
+Here’s your flight itinerary:
+
+Flight: FA123
+Departure: Toronto (YYZ) – Aug 5, 2025 – 10:00 AM
+Arrival: New York (JFK) – Aug 5, 2025 – 12:00 PM
+
+Manage booking:
+https://flyaway.com/manage?booking=FA12345
+
+--boundary18
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hi Test User,</p>
+    <p>Here’s your flight itinerary:</p>
+    <p><b>Flight:</b> FA123<br>
+       <b>Departure:</b> Toronto (YYZ) – Aug 5, 2025 – 10:00 AM<br>
+       <b>Arrival:</b> New York (JFK) – Aug 5, 2025 – 12:00 PM</p>
+    <p><a href="https://flyaway.com/manage?booking=FA12345">Manage your booking</a></p>
+  </body>
+</html>
+
+--boundary18--

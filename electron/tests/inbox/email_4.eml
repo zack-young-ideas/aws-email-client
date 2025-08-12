@@ -1,0 +1,37 @@
+From: "TechNews Weekly" <newsletter@technews.com>
+To: test.user@example.com
+Subject: Top Tech Stories This Week
+Date: Mon, 29 Jul 2025 12:00:00 -0400
+Message-ID: <news1001@technews.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary4"
+
+--boundary4
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+Here are this week's top tech stories:
+1. AI surpasses human-level coding skills.
+2. New quantum chip promises 10x speed.
+3. Apple releases iOS 20 Beta.
+
+Read more at:
+https://technews.com/latest
+
+--boundary4
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <h2>Top Tech Stories This Week</h2>
+    <ol>
+      <li><b>AI surpasses human-level coding skills.</b></li>
+      <li><b>New quantum chip promises 10x speed.</b></li>
+      <li><b>Apple releases iOS 20 Beta.</b></li>
+    </ol>
+    <p><a href="https://technews.com/latest">Read more</a></p>
+  </body>
+</html>
+
+--boundary4--

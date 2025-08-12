@@ -1,0 +1,44 @@
+From: "ShopOnline" <orders@shoponline.com>
+To: test.user@example.com
+Subject: Your Order #98765 Confirmation 🚚
+Date: Mon, 29 Jul 2025 10:15:00 -0400
+Message-ID: <order98765@shoponline.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary2"
+
+--boundary2
+Content-Type: text/plain; charset="UTF-8"
+
+Hello Test User,
+
+Thank you for your order #98765 placed on July 29, 2025.
+
+Order Summary:
+- Product: Wireless Headphones
+- Quantity: 1
+- Total: $59.99
+
+Track your order here:
+https://shoponline.com/track?order=98765
+
+Thanks,
+ShopOnline Team
+
+--boundary2
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hello Test User,</p>
+    <p>Thank you for your order <b>#98765</b> placed on <i>July 29, 2025</i>.</p>
+    <p><u>Order Summary:</u><br>
+    - Product: <b>Wireless Headphones</b><br>
+    - Quantity: 1<br>
+    - Total: <span style="color:green;">$59.99</span></p>
+    <p><a href="https://shoponline.com/track?order=98765">Click here to track your order</a>.</p>
+    <img src="cid:logo123@shoponline.com" alt="ShopOnline Logo" />
+    <p>Thanks,<br>ShopOnline Team</p>
+  </body>
+</html>
+
+--boundary2--

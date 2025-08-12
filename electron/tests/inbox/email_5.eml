@@ -1,0 +1,34 @@
+From: "Team Meeting" <calendar@company.com>
+To: test.user@example.com
+Subject: Meeting Invitation: Project Sync @ Tue, Jul 30 2025
+Date: Mon, 29 Jul 2025 13:00:00 -0400
+Message-ID: <invite123@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary5"
+
+--boundary5
+Content-Type: text/plain; charset="UTF-8"
+
+You have been invited to a meeting.
+
+Title: Project Sync
+Date: Tuesday, July 30, 2025
+Time: 10:00 AM - 11:00 AM EST
+
+Join via Zoom:
+https://zoom.us/j/123456789
+
+--boundary5
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p><b>Meeting Invitation</b></p>
+    <p><b>Title:</b> Project Sync</p>
+    <p><b>Date:</b> Tuesday, July 30, 2025</p>
+    <p><b>Time:</b> 10:00 AM - 11:00 AM EST</p>
+    <p>Join via <a href="https://zoom.us/j/123456789">Zoom</a></p>
+  </body>
+</html>
+
+--boundary5--

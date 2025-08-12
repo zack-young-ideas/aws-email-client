@@ -1,0 +1,32 @@
+From: "StreamingHub" <billing@streaminghub.com>
+To: test.user@example.com
+Subject: Your Subscription Has Been Canceled
+Date: Mon, 29 Jul 2025 20:00:00 -0400
+Message-ID: <cancel456@streaminghub.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary17"
+
+--boundary17
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+Your StreamingHub subscription has been successfully canceled as of July 29, 2025.
+
+You will retain access until the end of your billing cycle on August 15, 2025.
+
+We’re sorry to see you go!
+
+--boundary17
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hello,</p>
+    <p>Your <b>StreamingHub</b> subscription has been successfully canceled as of <i>July 29, 2025</i>.</p>
+    <p>You will retain access until <b>August 15, 2025</b>.</p>
+    <p>We’re sorry to see you go!</p>
+  </body>
+</html>
+
+--boundary17--

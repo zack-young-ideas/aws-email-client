@@ -1,0 +1,29 @@
+From: "Server Monitor" <alerts@monitoring.io>
+To: test.user@example.com
+Subject: CRITICAL: CPU Usage Exceeded 95%
+Date: Mon, 29 Jul 2025 16:00:00 -0400
+Message-ID: <alert9988@monitoring.io>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary8"
+
+--boundary8
+Content-Type: text/plain; charset="UTF-8"
+
+Alert: CPU usage exceeded 95% on server 'web01'.
+
+Time: 16:00 EDT
+Action required: Investigate immediately.
+
+--boundary8
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p><b>CRITICAL ALERT</b></p>
+    <p>CPU usage exceeded <b>95%</b> on server <i>'web01'</i>.</p>
+    <p><b>Time:</b> 16:00 EDT</p>
+    <p style="color:red;">Action required: Investigate immediately.</p>
+  </body>
+</html>
+
+--boundary8--

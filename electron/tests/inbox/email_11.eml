@@ -1,0 +1,37 @@
+From: "EventMaster" <events@eventmaster.com>
+To: test.user@example.com
+Subject: RSVP Confirmation: Annual Tech Gala
+Date: Mon, 29 Jul 2025 22:00:00 -0400
+Message-ID: <rsvp2025@eventmaster.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary19"
+
+--boundary19
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Test User,
+
+Thank you for RSVPing to the Annual Tech Gala.
+
+Date: September 10, 2025
+Location: Downtown Convention Center
+
+Your RSVP confirmation number: 789654
+
+See you there!
+
+--boundary19
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hi Test User,</p>
+    <p>Thank you for RSVPing to the <b>Annual Tech Gala</b>.</p>
+    <p><b>Date:</b> September 10, 2025<br>
+       <b>Location:</b> Downtown Convention Center</p>
+    <p>Your RSVP confirmation number: <b>789654</b></p>
+    <p>See you there!</p>
+  </body>
+</html>
+
+--boundary19--

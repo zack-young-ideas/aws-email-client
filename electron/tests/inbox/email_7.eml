@@ -1,0 +1,41 @@
+From: "FriendBook" <no-reply@friendbook.com>
+To: test.user@example.com
+Subject: You have 5 new friend requests
+Date: Mon, 29 Jul 2025 15:00:00 -0400
+Message-ID: <notif567@friendbook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary7"
+
+--boundary7
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Test User,
+
+You have 5 new friend requests:
+- Alice
+- Bob
+- Charlie
+- Dana
+- Eve
+
+Respond now: https://friendbook.com/requests
+
+--boundary7
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hi Test User,</p>
+    <p>You have <b>5 new friend requests</b>:</p>
+    <ul>
+      <li>Alice</li>
+      <li>Bob</li>
+      <li>Charlie</li>
+      <li>Dana</li>
+      <li>Eve</li>
+    </ul>
+    <p><a href="https://friendbook.com/requests">Respond now</a></p>
+  </body>
+</html>
+
+--boundary7--

@@ -1,0 +1,35 @@
+From: "Support Desk" <support@webapp.io>
+To: test.user@example.com
+Subject: [Ticket #2025072901] Status Updated
+Date: Mon, 29 Jul 2025 14:00:00 -0400
+Message-ID: <ticket2025072901@webapp.io>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary6"
+
+--boundary6
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Test User,
+
+Your support ticket #2025072901 has been updated. Status: Resolved.
+
+Details:
+The login issue was fixed. You can now access your account.
+
+Thanks,
+WebApp Support
+
+--boundary6
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hi Test User,</p>
+    <p>Your support ticket <b>#2025072901</b> has been updated.</p>
+    <p>Status: <span style="color:green;">Resolved</span></p>
+    <p>Details: The login issue was fixed. You can now access your account.</p>
+    <p>Thanks,<br>WebApp Support</p>
+  </body>
+</html>
+
+--boundary6--

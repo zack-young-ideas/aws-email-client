@@ -1,0 +1,34 @@
+From: "Acme Corp" <noreply@acmecorp.com>
+To: test.user@example.com
+Subject: Welcome to Acme Corp!
+Date: Mon, 29 Jul 2025 09:00:00 -0400
+Message-ID: <welcome12345@acmecorp.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="boundary1"
+
+--boundary1
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Test User,
+
+Welcome to Acme Corp! We're excited to have you on board.
+
+Visit your dashboard to get started:
+https://acmecorp.com/dashboard
+
+Best regards,
+The Acme Team
+
+--boundary1
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+  <body>
+    <p>Hi Test User,</p>
+    <p>Welcome to <b>Acme Corp</b>! We're excited to have you on board.</p>
+    <p>Visit your <a href="https://acmecorp.com/dashboard">dashboard</a> to get started.</p>
+    <p>Best regards,<br>The Acme Team</p>
+  </body>
+</html>
+
+--boundary1--
