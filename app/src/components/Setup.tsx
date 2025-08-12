@@ -1,7 +1,7 @@
 export default function Setup() {
   return (
-    <div>
-      <h1>Hello, World!</h1>
+    <div className="container">
+      <h2 className="mt-3 mb-3">Setup</h2>
       <form>
         <div className="mb-3">
           <label
