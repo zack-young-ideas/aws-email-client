@@ -7,5 +7,11 @@ if (!import.meta.env.PROD) {
     /*
     Create functions that mock those in the preload script.
     */
+    updateAccessTokens: async (accessTokenId, secretAccessToken) => {
+      return true;
+    },
+    updateSmtpCredentials: async (username, password) => {
+      return true;
+    },
   }
 }
