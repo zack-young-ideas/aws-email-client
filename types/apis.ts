@@ -1,9 +1,8 @@
 export type SetupData = {
-  password: boolean,
   accessKey: boolean,
   smptCredentials: boolean,
 }
 
-export interface AuthAPI {
-  setupData: () => Promise<SetupData>;
+export interface API {
+  setupComplete: () => Promise<SetupData>;
 }
