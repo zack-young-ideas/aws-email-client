@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function AccessTokenSetup({
+export default function AccessKeySetup({
   errorMessage,
   submitHandler
 }: {
@@ -8,8 +8,8 @@ export default function AccessTokenSetup({
   submitHandler: Function
 }) {
   const [formData, setFormData] = useState({
-    accessTokenId: '',
-    secretAccessToken: '',
+    accessKeyId: '',
+    secretAccessKey: '',
   });
 
   const handleChange = (event) => {
@@ -22,7 +22,7 @@ export default function AccessTokenSetup({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    submitHandler(formData.accessTokenId, formData.secretAccessToken);
+    submitHandler(formData.accessKeyId, formData.secretAccessKey);
   }
 
   return (
@@ -32,33 +32,33 @@ export default function AccessTokenSetup({
         <div className="mb-3">
           <label
             className="form-label"
-            htmlFor="accessTokenId"
+            htmlFor="accessKeyId"
           >
-            Access Token ID
+            Access Key ID
           </label>
           <input
             className="form-control"
-            id="accessTokenId"
-            name="accessTokenId"
+            id="accessKeyId"
+            name="accessKeyId"
             onChange={handleChange}
             type="text"
-            value={formData.accessTokenId}
+            value={formData.accessKeyId}
           />
         </div>
         <div className="mb-3">
           <label
             className="form-label"
-            htmlFor="secretAccessToken"
+            htmlFor="secretAccessKey"
           >
-            Secret Access Token
+            Secret Access Key
           </label>
           <input
             className="form-control"
-            id="secretAccessToken"
-            name="secretAccessToken"
+            id="secretAccessKey"
+            name="secretAccessKey"
             onChange={handleChange}
             type="password"
-            value={formData.secretAccessToken}
+            value={formData.secretAccessKey}
           />
         </div>
         <div className="mb-3">

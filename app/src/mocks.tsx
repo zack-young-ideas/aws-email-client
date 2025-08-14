@@ -7,9 +7,9 @@ if (!import.meta.env.PROD) {
     /*
     Create functions that mock those in the preload script.
     */
-    updateAccessTokens: async (accessTokenId, secretAccessToken) => {
-      if ((accessTokenId === 'fakeAccessTokenId')
-          && (secretAccessToken === 'fakeSecretAccessToken')) {
+    updateAccessKeys: async (accessKeyId, secretAccessKey) => {
+      if ((accessKeyId === 'fakeAccessKeyId')
+          && (secretAccessKey === 'fakeSecretAccessKey')) {
         return {
           ok: true,
           json: async () => ({
@@ -20,7 +20,7 @@ if (!import.meta.env.PROD) {
         return {
           ok: false,
           json: async () => ({
-            'message': 'Invalid access token ID or secret access token.',
+            'message': 'Invalid access key ID or secret access key.',
           }),
         }
       }
@@ -43,5 +43,15 @@ if (!import.meta.env.PROD) {
         }
       }
     },
+
+    getSetupData: async () => {
+      return {
+        ok: true,
+        json: async () => ({
+          accessKeyId: true,
+          smtpCredentials: true,
+        }),
+      }
+    }
   }
 }

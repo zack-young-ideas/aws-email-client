@@ -1,36 +1,63 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss'
-import AccessTokenSetup from './components/AccessTokenSetup';
+import AccessKeySetup from './components/AccessKeySetup';
 import SmtpSetup from './components/SmtpSetup';
 
-function App() {
+function App({ apiObject }: { apiObject: any }) {
 
-  const [setupPage, setSetupPage] = useState('accessToken');
+  const [page, setPage] = useState('accessKey');
   const [setupPageError, setSetupPageError] = useState('');
 
-  const accessTokenHandler = async (accessTokenId, secretAccessToken) => {
+  useEffect(() => {
+    const onLoad = async () => {
+      /*
+      Checks to see if the user had previously entered their
+      credentials. If not, they are prompted to complete the setup
+      process.
+      */
+      let response;
+      try {
+        response = await apiObject.getSetupData();
+        if (response.ok) {
+          const body = await response.json();
+          if (body.accessKeyId && body.smtpCredentials) {
+            setPage('overview');
+          }
+          if (body.accessKeyId && !body.smtpCredentials) {
+            setPage('smtp');
+          }
+        }
+      } catch (error) {
+        console.error('Cannot load setup data');
+      }
+    }
+    onLoad();
+  }, []);
+
+  const accessKeyHandler = async (accessKeyId, secretAccessKey) => {
     /*
     Called when the user enters their access token ID and secret access
     token.
     */
     let response;
     try {
-      response = await window.api.updateAccessTokens(
-        accessTokenId,
-        secretAccessToken
+      response = await apiObject.updateAccessKeys(
+        accessKeyId,
+        secretAccessKey
       );
-    } catch (error) {
-      // Display an error message to the user.
-      setSetupPageError(
-        'Unable to validate access token ID and secret access token'
-      );
-    } finally {
       if (response.ok) {
-        setSetupPage('smtp');
+        setPage('smtp');
       } else {
+        // Display an error message to the user if their credentials
+        // are not accepted.
         const body = await response.json()
         setSetupPageError(body.message);
       }
+    } catch (error) {
+      // Display an error message if the operation fails.
+      setSetupPageError(
+        'Unable to validate access key ID and secret access key'
+      );
     }
   }
 
@@ -40,31 +67,32 @@ function App() {
     */
     let response;
     try {
-      response = await window.api.updateSmtpCredentials(
+      response = await apiObject.updateSmtpCredentials(
         username,
         password
       );
-    } catch (error) {
-      // Display an error message to the user.
-      setSetupPageError(
-        'Unable to validate access token ID and secret access token'
-      );
-    } finally {
       if (response.ok) {
-        setSetupPage('none');
+        setPage('smtp');
       } else {
+        // Display an error message to the user if their credentials
+        // are not accepted.
         const body = await response.json()
         setSetupPageError(body.message);
       }
+    } catch (error) {
+      // Display an error message if the operation fails.
+      setSetupPageError(
+        'Unable to validate SMTP credentials'
+      );
     }
   }
 
-  switch (setupPage) {
-    case 'accessToken':
+  switch (page) {
+    case 'accessKey':
       return (
-        <AccessTokenSetup
+        <AccessKeySetup
           errorMessage={setupPageError}
-          submitHandler={accessTokenHandler}
+          submitHandler={accessKeyHandler}
         />
       )
     case 'smtp':
@@ -75,7 +103,7 @@ function App() {
         />
       )
     default:
-      return <div></div>;
+      return <h1>Hello, World!</h1>;
   }
 }
 
