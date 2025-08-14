@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import './App.scss'
 import AccessKeySetup from './components/AccessKeySetup';
+import Overview from './components/Overview';
 import SmtpSetup from './components/SmtpSetup';
 
 function App({ apiObject }: { apiObject: any }) {
 
+  const [emails, setEmails] = useState([]);
   const [page, setPage] = useState('accessKey');
   const [setupPageError, setSetupPageError] = useState('');
 
@@ -22,6 +24,7 @@ function App({ apiObject }: { apiObject: any }) {
           const body = await response.json();
           if (body.accessKeyId && body.smtpCredentials) {
             setPage('overview');
+            await getEmails();
           }
           if (body.accessKeyId && !body.smtpCredentials) {
             setPage('smtp');
@@ -33,6 +36,14 @@ function App({ apiObject }: { apiObject: any }) {
     }
     onLoad();
   }, []);
+
+  const getEmails = async () => {
+    const response = await apiObject.getEmails();
+    if (response.ok) {
+      const body = await response.json();
+      setEmails(body.emails);
+    }
+  }
 
   const accessKeyHandler = async (accessKeyId, secretAccessKey) => {
     /*
@@ -103,7 +114,9 @@ function App({ apiObject }: { apiObject: any }) {
         />
       )
     default:
-      return <h1>Hello, World!</h1>;
+      return (
+        <Overview emails={emails} />
+      );
   }
 }
 
