@@ -6,7 +6,7 @@ describe('SmtpSetup component', () => {
   it('renders form', () => {
     const handler = jest.fn();
 
-    render(<SmtpSetup submitHandler={handler} />);
+    render(<SmtpSetup errorMessage={''} submitHandler={handler} />);
 
     expect(screen.getByLabelText(/username/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('SmtpSetup component', () => {
 
     expect(handler).not.toHaveBeenCalled();
 
-    render(<SmtpSetup submitHandler={handler} />);
+    render(<SmtpSetup errorMessage={''} submitHandler={handler} />);
 
     const usernameInput = await screen.getByLabelText(/username/i);
     fireEvent.change(
@@ -39,5 +39,29 @@ describe('SmtpSetup component', () => {
       'fakeUsername',
       'fakePassword',
     );
+  });
+
+  it('displays error message', () => {
+    const handler = jest.fn();
+
+    const { rerender } = render(
+      <SmtpSetup errorMessage={'Error'} submitHandler={handler} />
+    );
+
+    expect(screen.getByLabelText(/username/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+    expect(screen.getByText('Error')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /submit/i })
+    ).toBeInTheDocument();
+
+    rerender(<SmtpSetup errorMessage={''} submitHandler={handler} />);
+
+    expect(screen.getByLabelText(/username/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+    expect(screen.queryByText('Error')).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /submit/i })
+    ).toBeInTheDocument();
   });
 });

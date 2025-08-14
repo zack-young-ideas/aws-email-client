@@ -6,7 +6,7 @@ describe('AccessTokenSetup component', () => {
   it('renders form', () => {
     const handler = jest.fn();
 
-    render(<AccessTokenSetup submitHandler={handler} />);
+    render(<AccessTokenSetup errorMessage={''} submitHandler={handler} />);
 
     expect(screen.getByLabelText(/access token id/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/secret access token/i)).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('AccessTokenSetup component', () => {
 
     expect(handler).not.toHaveBeenCalled();
 
-    render(<AccessTokenSetup submitHandler={handler} />);
+    render(<AccessTokenSetup errorMessage={''} submitHandler={handler} />);
 
     const accessTokenIdInput = await screen.getByLabelText(/access token id/i);
     fireEvent.change(
@@ -41,5 +41,29 @@ describe('AccessTokenSetup component', () => {
       'fakeAccessTokenID',
       'fakeSecretAccessToken',
     );
+  });
+
+  it('displays error message', () => {
+    const handler = jest.fn();
+
+    const { rerender } = render(
+      <AccessTokenSetup errorMessage={'Error'} submitHandler={handler} />
+    );
+
+    expect(screen.getByLabelText(/access token id/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/secret access token/i)).toBeInTheDocument();
+    expect(screen.getByText('Error')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /submit/i })
+    ).toBeInTheDocument();
+
+    rerender(<AccessTokenSetup errorMessage={''} submitHandler={handler} />);
+
+    expect(screen.getByLabelText(/access token id/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/secret access token/i)).toBeInTheDocument();
+    expect(screen.queryByText('Error')).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /submit/i })
+    ).toBeInTheDocument();
   });
 });

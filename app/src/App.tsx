@@ -6,6 +6,7 @@ import SmtpSetup from './components/SmtpSetup';
 function App() {
 
   const [setupPage, setSetupPage] = useState('accessToken');
+  const [setupPageError, setSetupPageError] = useState('');
 
   const accessTokenHandler = async (accessTokenId, secretAccessToken) => {
     /*
@@ -20,10 +21,15 @@ function App() {
       );
     } catch (error) {
       // Display an error message to the user.
-      response = false;
+      setSetupPageError(
+        'Unable to validate access token ID and secret access token'
+      );
     } finally {
-      if (response) {
+      if (response.ok) {
         setSetupPage('smtp');
+      } else {
+        const body = await response.json()
+        setSetupPageError(body.message);
       }
     }
   }
@@ -40,10 +46,15 @@ function App() {
       );
     } catch (error) {
       // Display an error message to the user.
-      response = false;
+      setSetupPageError(
+        'Unable to validate access token ID and secret access token'
+      );
     } finally {
-      if (response) {
+      if (response.ok) {
         setSetupPage('none');
+      } else {
+        const body = await response.json()
+        setSetupPageError(body.message);
       }
     }
   }
@@ -51,11 +62,17 @@ function App() {
   switch (setupPage) {
     case 'accessToken':
       return (
-        <AccessTokenSetup submitHandler={accessTokenHandler} />
+        <AccessTokenSetup
+          errorMessage={setupPageError}
+          submitHandler={accessTokenHandler}
+        />
       )
     case 'smtp':
       return (
-        <SmtpSetup submitHandler={smtpHandler} />
+        <SmtpSetup
+          errorMessage={setupPageError}
+          submitHandler={smtpHandler}
+        />
       )
     default:
       return <div></div>;

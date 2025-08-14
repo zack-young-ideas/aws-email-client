@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
 export default function AccessTokenSetup({
+  errorMessage,
   submitHandler
 }: {
+  errorMessage: string,
   submitHandler: Function
 }) {
   const [formData, setFormData] = useState({
@@ -58,6 +60,9 @@ export default function AccessTokenSetup({
             type="password"
             value={formData.secretAccessToken}
           />
+        </div>
+        <div className="mb-3">
+          <p className="text-danger">{errorMessage}</p>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
