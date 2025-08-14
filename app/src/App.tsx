@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import './App.scss'
+import { useEffect, useState } from 'react';
+import './App.scss';
 import AccessKeySetup from './components/AccessKeySetup';
 import Overview from './components/Overview';
 import SmtpSetup from './components/SmtpSetup';

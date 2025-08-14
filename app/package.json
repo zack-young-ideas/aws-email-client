@@ -31,6 +31,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "react-icons": "^5.5.0",
     "sass": "^1.90.0",
     "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
